@@ -3,7 +3,7 @@ name: Feature request
 about: Suggest an idea for this project
 title: 'Feature Request:'
 labels: enhancement
-assignees: davidsaulrodriguez JCyberAI sossw1
+assignees: davidsaulrodriguez, JCyberAI, sossw1
 
 ---
 

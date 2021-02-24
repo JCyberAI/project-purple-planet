@@ -1,6 +1,6 @@
 {
   "name": "project-purple-planet",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple, clean and lightweight personal project and task manager built using NodeJS, Express, Materialize, MySQL, HandlebarsJS and Sequelize.",
   "main": "app.js",
   "directories": {
@@ -9,10 +9,12 @@
   "scripts": {
     "build:assets": "gulp compile",
     "clean:build": "gulp clean",
+    "createDB": "node db/createDB",
     "lint": "eslint './**/*.js' --quiet",
     "start": "node app",
     "test": "echo \"Warning: no test specified\" && exit 0",
-    "watch": "nodemon app"
+    "watch": "nodemon app",
+    "heroku-postbuild": "gulp compile"
   },
   "repository": {
     "type": "git",

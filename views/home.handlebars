@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="center"> <i class="material-icons large hide-on-small-and-down">dashboard</i> Dashboard</h1>
+      <div class="row fill-window">
+        {{#each boards}}
+        <div class="col s12 m6 l4">
+          <div class="card purple darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{dataValues.name}}</span>
+            </div>
+            <div class="card-action">
+              <button class='board-button btn pink lighten-2 z-depth-3' id={{dataValues.id}}>View Board</button>
+              <button class='delete-board btn red darken-1 right' id={{dataValues.id}}>
+                <i class="material-icons" id={{dataValues.id}}>delete_forever</i>
+              </button>
+            </div>
+          </div>
+        </div>
+        {{else}}
+        <div class="col s12 m10 offset-m1">
+          <h2 class="grey-text lighten-4 center no-boards">You currently have no boards.</h2>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Floating Action Buttons -->
+
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red modal-trigger" href="#addBoard">
+          <i class="large material-icons">add</i>
+        </a>
+      </div>
+
+      <div id="addBoard" class="modal">
+        <div class="modal-content">
+          <h4 class="center">Add A Board</h4>
+          <form>
+            <div class="row">
+              <div class="input-field col s10 offset-s1">
+                <input value="" id="name" type="text" class="validate">
+                <input type="hidden" id="UserId" value="{{member.id}}">
+                <label class="active" for="name">Board Name</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input class="modal-close btn waves-effect waves-green" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="/assets/js/home.min.js"></script>

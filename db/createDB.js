@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const Importer = require('mysql-import');
 const host = process.env.DB_HOST;
 const user = process.env.DB_USER;
@@ -10,7 +11,7 @@ importer.onProgress(progress=>{
   console.log(`${percent}% Completed`);
 });
 
-importer.import('').then(() => {
+importer.import(path.join(__dirname, 'create_db.sql')).then(() => {
   let files_imported = importer.getImported(); 
   console.log(`${files_imported.length} SQL file(s) imported.`);
 }).catch(err => {

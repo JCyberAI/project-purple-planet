@@ -1,14 +1,14 @@
 /* eslint-disable no-undef */
 $(document).ready(function() {
   // Getting references to our form and input
-  const signUpForm = $('form.signup');
-  const emailInput = $('input#email-input');
-  const passwordInput = $('input#password-input');
+  let signUpForm = $('form.signup');
+  let emailInput = $('input#email-input');
+  let passwordInput = $('input#password-input');
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on('submit', function(event) {
     event.preventDefault();
-    const userData = {
+    let userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
@@ -31,7 +31,7 @@ $(document).ready(function() {
     })
       // eslint-disable-next-line no-unused-vars
       .then(function(data) {
-        window.location.replace('/members');
+        window.location.replace('/home');
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

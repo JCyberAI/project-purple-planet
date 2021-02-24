@@ -4,7 +4,7 @@ Describe the big picture of your changes here to communicate to the maintainers 
 
 ## Types of changes
 
-What types of changes does your code introduce to Keeper?
+What types of changes does your code introduce to Project Purple Planet?
 _Put an `X` in the boxes that apply_
 
 > Remove the options that are not applicable. All pull requests must check off all boxes in the pull request body or your pull request will automatically fail.

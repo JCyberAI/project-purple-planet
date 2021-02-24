@@ -109,29 +109,38 @@ Before using this application you should create the **Project Purple Planet** da
 ```shell
 npm run createDB
 ```
+> This command will create three databases. A production database: `purple_planet`, A development database: `purple_planet_dev`, and a test database: `purple_planet_test`.
 
-After creating the database, you should build the site assets (JavaScript & CSS) or else things wont work or look pretty.
+After creating the database, you should build the site assets (JavaScript, CSS, Images, etc..) or else things wont work or look pretty.
 
 ```shell
 npm run build:assets
 ```
+> _**If you are developing on this project, you should rebuild the assets anytime you make changes to client side files in the project or else those changes won't take effect when you are running the server.**_
 
-After building the project assets and creating the database with `npm run createDB` you can start the **Project Purple Planet** by running:
+After building the project assets and creating the database, you can start **Project Purple Planet** by running:
 
 ```shell
 npm run start
+```
+
+Cleaning up the built assets and starting fresh is as simple as running:
+
+```shell
+npm run clean:build
 ```
 
 ## Supported Versions
 
 Below is a list of the currently supported versions of this software.
 
-> Note: This project is ephemeral and will not actually be supported at all. This is simply a homework assignment for my Coding Boot Camp class. Hence the week long support date.
+> Note: This project will continue to be iterated on even after it's due date and presentation for my Coding Boot Camp.
 
 | Release | Status            | Initial Release | Active LTS Start | Maintenance LTS Start | End of Life |
 | :-----: | :---------------: | :-------------: | :--------------: | :-------------------: | :---------: |
 | develop | Unstable          | - | - | - | - |
-| v1  | :heavy_check_mark: | 2021-02-23 | 2021-08-23 | - | - |
+| v1  | :heavy_check_mark: | 2021-02-23 | 2021-08-23 | - | 2022-02-23 |
+| v2  | :construction: | 2021-08-20 | 2022-02-20 | 2022-08-20 | 2023-08-20 |
 
 You can view the Status Key Map and software support model [here][support].
 

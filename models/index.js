@@ -1,17 +1,25 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 'use strict';
-
-const fs        = require('fs');
-const path      = require('path');
-const Sequelize = require('sequelize');
-const basename  = path.basename(module.filename);
-const env       = process.env.NODE_ENV || 'development';
-const config    = require(path.join(__dirname, '../config/config.json'))[env];
-const db        = {};
+require('dotenv').config();
+let fs        = require('fs');
+let path      = require('path');
+let Sequelize = require('sequelize');
+let basename  = path.basename(module.filename);
+let env       = process.env.NODE_ENV || 'development';
+let config    = require(__dirname + '/../config/config.js')[env];
+let db        = {};
 let sequelize;
 
-if (config.use_env_variable) {
+const connection = {
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  host: process.env.DB_HOST,
+  dialect: 'mysql',
+};
+
+if (process.env.JAWSDB_MARIA_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_MARIA_URL || connection);
+} else if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);

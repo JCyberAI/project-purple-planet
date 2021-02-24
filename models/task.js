@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     status: {
       type: DataTypes.STRING,
       allowNull: false,
-      isIn: [['To Do', 'In Progress', 'Completed']],
+      isIn: [['To Do', 'In Progress', 'Review', 'Completed']],
     },
   });
 

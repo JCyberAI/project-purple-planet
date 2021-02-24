@@ -1,0 +1,30 @@
+<nav class="purple darken-1">
+  <div class="nav-wrapper container">
+    <a href="/home" class="brand-logo"><img class="logo hide-on-small-and-down" src="/assets/imgs/logo.svg" height="50px" alt="logo" /> Purple Planet</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/logout" title="Logout"><i class="material-icons">logout</i></a></li>
+    </ul>
+
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            {{!-- <img src=""> --}}
+          </div>
+          <img class="circle" src="/assets/imgs/logo.svg">
+          <span class="white-text name" id="userId"></span>
+          <span class="white-text email" id="userEmail"></span>
+        </div>
+      </li>
+      <li><a href="/home"><i class="material-icons">dashboard</i>Dashboard</a></li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li><a href="/logout"><i class="material-icons">logout</i> Logout</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger">
+      <i class="material-icons">menu</i>
+    </a>
+  </div>
+</nav>

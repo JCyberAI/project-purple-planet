@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="center"> <i class="material-icons large hide-on-small-and-down">task_alt</i> Tasks</h1>
+      <div class="row fill-window">
+        {{#each tasks}}
+        <div class="col s12 m6 l4">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title center">{{dataValues.title}}</span>
+                <p>{{dataValues.body}}</p>
+              </div>
+              <div class="card-action">
+                <span class="center badge purple white-text">{{dataValues.status}}</span>
+                <a href="#" class="task-delete" id="{{dataValues.id}}"><i class="material-icons"
+                    id="{{dataValues.id}}">delete_forever</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{else}}
+        <div class="col s12 m10 offset-m1">
+          <h2 class="grey-text lighten-4 center no-boards">You currently have no tasks on this board.</h2>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Floating Action Buttons -->
+
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red modal-trigger" href="#addTask">
+          <i class="large material-icons">add</i>
+        </a>
+      </div>
+
+      <div id="addTask" class="modal">
+        <div class="modal-content">
+          <h4 class="center">Add A Task</h4>
+          <form>
+            <div class="row">
+              <div class="input-field col s10 offset-s1">
+                <input value="" id="title" type="text" class="validate">
+                <label class="active" for="title">Task Title</label>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <input value="" id="body" type="text" class="validate">
+                <label class="active" for="body">Task Body</label>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <input value="" id="status" type="text" class="validate">
+                <label class="active" for="status">Status</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input class="modal-close btn waves-effect waves-green" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/tasks.min.js"></script>

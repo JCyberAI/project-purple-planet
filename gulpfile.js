@@ -18,6 +18,7 @@ const gls = require('gulp-live-server');
 
 /* Where the production ready build should go */
 const jsDist = './public/assets/js';
+const imgsDist = './public/assets/imgs';
 const styleDist = './public/assets/css';
 
 // Tasks that get things done!
@@ -28,9 +29,7 @@ task('scss-dist', function () {
   console.log('\t\tCreating your CSS \'.map\' files...');
   return src(['node_modules/materialize-css/sass/materialize.scss',
     'src/assets/css/**',
-    'src/assets/scss/**',
-    'src/assets/scss/!*.scss',
-    // '!src/assets/scss/*.html'
+    'src/assets/scss/**.scss'
   ])
     .pipe(sourcemap.init())
     .pipe(sass({
@@ -70,7 +69,18 @@ task('js-dist', function () {
     .pipe(dest(jsDist));
 });
 
-task('compile', parallel('scss-dist', 'js-dist'));
+task('imgs-dist', function () {
+  console.log('\t\tMigrating your image files...');
+  return src(['src/assets/imgs/**.svg',
+    'src/assets/imgs/**.jpg',
+    'src/assets/imgs/**.jpeg',
+    'src/assets/imgs/**.gif',
+    'src/assets/imgs/**.png'
+  ])
+    .pipe(dest(imgsDist));
+});
+
+task('compile', parallel('scss-dist', 'js-dist', 'imgs-dist'));
 
 task('serve', function () {
   let server = gls.new(['app.js']);
